@@ -1,0 +1,44 @@
+2021-01-22 21:55:05.566 IST [16888] LOG:  starting PostgreSQL 12.2, compiled by Visual C++ build 1916, 64-bit
+2021-01-22 21:55:05.574 IST [16888] LOG:  listening on IPv6 address "::1", port 5432
+2021-01-22 21:55:05.574 IST [16888] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2021-01-22 21:55:05.719 IST [14684] LOG:  database system was shut down at 2021-01-22 21:52:59 IST
+2021-01-22 21:55:05.918 IST [16888] LOG:  database system is ready to accept connections
+2021-01-22 21:56:06.967 IST [12276] ERROR:  canceling statement due to user request
+2021-01-22 21:56:06.974 IST [16888] LOG:  received fast shutdown request
+2021-01-22 21:56:07.031 IST [16888] LOG:  aborting any active transactions
+2021-01-22 21:56:07.094 IST [16888] LOG:  background worker "logical replication launcher" (PID 12276) exited with exit code 1
+2021-01-22 21:56:07.131 IST [22800] LOG:  shutting down
+2021-01-22 21:56:07.993 IST [16888] LOG:  database system is shut down
+2021-01-22 22:19:40.995 IST [5860] LOG:  starting PostgreSQL 12.2, compiled by Visual C++ build 1916, 64-bit
+2021-01-22 22:19:41.003 IST [5860] LOG:  listening on IPv6 address "::1", port 5432
+2021-01-22 22:19:41.003 IST [5860] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2021-01-22 22:19:41.332 IST [14944] LOG:  database system was shut down at 2021-01-22 21:56:07 IST
+2021-01-22 22:19:41.766 IST [5860] LOG:  database system is ready to accept connections
+2021-01-22 22:28:00.177 IST [5860] LOG:  received fast shutdown request
+2021-01-22 22:28:00.332 IST [5860] LOG:  aborting any active transactions
+2021-01-22 22:28:00.407 IST [3780] ERROR:  canceling statement due to user request
+2021-01-22 22:28:00.431 IST [5860] LOG:  background worker "logical replication launcher" (PID 3780) exited with exit code 1
+2021-01-22 22:28:00.454 IST [15704] LOG:  shutting down
+2021-01-22 22:28:00.691 IST [5860] LOG:  database system is shut down
+2021-01-23 01:25:02.120 IST [23188] LOG:  starting PostgreSQL 12.2, compiled by Visual C++ build 1916, 64-bit
+2021-01-23 01:25:02.127 IST [23188] LOG:  listening on IPv6 address "::1", port 5432
+2021-01-23 01:25:02.127 IST [23188] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2021-01-23 01:25:02.850 IST [17176] LOG:  database system was shut down at 2021-01-22 22:28:00 IST
+2021-01-23 01:25:03.081 IST [23188] LOG:  database system is ready to accept connections
+2021-01-23 02:21:05.523 IST [23188] LOG:  received fast shutdown request
+2021-01-23 02:21:05.691 IST [23188] LOG:  aborting any active transactions
+2021-01-23 02:21:05.725 IST [22440] ERROR:  canceling statement due to user request
+2021-01-23 02:21:05.750 IST [23188] LOG:  background worker "logical replication launcher" (PID 22440) exited with exit code 1
+2021-01-23 02:21:05.772 IST [15688] LOG:  shutting down
+2021-01-23 02:21:06.002 IST [23188] LOG:  database system is shut down
+2021-01-23 22:04:21.397 IST [16248] LOG:  starting PostgreSQL 12.2, compiled by Visual C++ build 1916, 64-bit
+2021-01-23 22:04:21.404 IST [16248] LOG:  listening on IPv6 address "::1", port 5432
+2021-01-23 22:04:21.404 IST [16248] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2021-01-23 22:04:22.406 IST [9988] LOG:  database system was shut down at 2021-01-23 02:21:05 IST
+2021-01-23 22:04:22.734 IST [16248] LOG:  database system is ready to accept connections
+2021-01-23 22:16:49.489 IST [16248] LOG:  received fast shutdown request
+2021-01-23 22:16:49.634 IST [16248] LOG:  aborting any active transactions
+2021-01-23 22:16:49.636 IST [14352] ERROR:  canceling statement due to user request
+2021-01-23 22:16:49.654 IST [16248] LOG:  background worker "logical replication launcher" (PID 14352) exited with exit code 1
+2021-01-23 22:16:49.698 IST [19052] LOG:  shutting down
+2021-01-23 22:16:49.925 IST [16248] LOG:  database system is shut down

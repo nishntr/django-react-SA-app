@@ -1,0 +1,6 @@
+### Django ###
+
+/.vscode
+
+# dependencies
+**/node_modules/*
