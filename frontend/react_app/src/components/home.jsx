@@ -57,7 +57,7 @@ function Home() {
 
         // //Axios predict API call
         axios(config).then(
-            res => {setPrediction(res.data["0"])
+            res => {setPrediction(res.data["res"])
             }).catch(
                 error => {alert(error)})
 

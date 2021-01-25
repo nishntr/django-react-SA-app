@@ -1,6 +1,7 @@
 ### Django ###
 
 /.vscode
-
+**/model/model.h5
+*.h5
 # dependencies
 **/node_modules/*
