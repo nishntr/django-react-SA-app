@@ -3,13 +3,27 @@ import axios from 'axios';
 import * as settings from '../settings';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
-import { Container, Grid, Paper, Typography, Slider, Button,TextField  } from '@material-ui/core';
+import {createMuiTheme, ThemeProvider, makeStyles } from '@material-ui/core/styles';
+import { Container, Grid, Paper, Typography, Slider, Button, TextField } from '@material-ui/core';
 
+const theme1 = createMuiTheme({
+    typography: {
+      caption: {
+          color:"red",
+        fontSize: 14,
+      },
+      body1: {
 
+        fontWeight: 500,
+      },
+    },
+  });
 const useStyles = makeStyles((theme) => ({
     container: {
-        maxWidth: "75%",
+        display: 'flex',
+        flexGrow: 1,
+        maxWidth: "80%",
+        minHeight: "120px",
         marginTop: "15vh",
         marginBottom: "10vh",
         borderRadius: '6px',
@@ -18,17 +32,15 @@ const useStyles = makeStyles((theme) => ({
     title: {
         marginTop: theme.spacing(2),
         marginBottom: theme.spacing(2),
-        padding: theme.spacing(2), paddingLeft: theme.spacing(4),
-        color: theme.palette.primary.main,
+        padding: theme.spacing(2), 
     },
-    
+
     root: {
-        '& > *': {
-          margin: theme.spacing(1),
-          width: '50ch',
-          backgroundColor: theme.palette.primary.contrastText,
-        },
-      },
+        marginTop: theme.spacing(2),
+        marginBottom: theme.spacing(2),
+        backgroundColor: 'white',
+
+    },
 }));
 
 
@@ -40,6 +52,7 @@ function Home() {
 
     // React hook state variable - text
     const [text, setText] = React.useState("");
+    const [clr, setClr] = React.useState("White")
     // React hook state variable - Prediction
     const [prediction, setPrediction] = React.useState(null)
 
@@ -48,45 +61,49 @@ function Home() {
     const handlePredict = event => {
 
         // setPrediction(text)        
-        
+
         // //Axios variables required to call the predict API
         // // let headers = { 'Authorization': `Token ${props.token}` };
         let url = settings.API_SERVER + '/api/sentiment/';
         let method = 'post';
-        let config = { method, url, data: {"0":text} };
+        let config = { method, url, data: { "0": text } };
 
         // //Axios predict API call
         axios(config).then(
-            res => {setPrediction(res.data["res"])
+            res => {
+                setPrediction(res.data["res"])
             }).catch(
-                error => {alert(error)})
+                error => { alert(error) })
 
     }
 
     return (
         <React.Fragment>
             <CssBaseline />
-            <Container fixed className={classes.container}>
-                <Grid container alignItems="center" spacing={3}>
-                    <Grid item xs={5}>
-                        <form className={classes.root} noValidate autoComplete="off">
-                            <TextField name="text" id="outlined-basic" label="Text" variant="outlined" onChange={e=>setText(e.target.value)}/>
-                        </form>
-                        
+            <Container className={classes.container}>
+                <Grid container flexGrow='1' alignItems="center" spacing={3}>
+                    <Grid item xs={12} sm={7}>
+                        <Paper className={classes.root} >
+                            <TextField fullWidth="1" name="text" id="outlined-basic" label="Text" variant="outlined" onChange={e => setText(e.target.value)} />
+                        </Paper>
+
                     </Grid>
-                    <Grid item xs={2}>
-                        <Button variant="contained" color="primary" onClick={handlePredict}>
+                    <Grid alignItems="center" item xs={6} sm={2}>
+                        <Button fullWidth="1" variant="contained" color="primary" onClick={handlePredict}>
                             Predict
                         </Button>
                     </Grid>
-                    <Grid item xs={4}>
-                        <Paper className={classes.title} elevation={0}>
-                            <Typography variant="caption" display="inline">
-                                Predicted Iris Species: <span>&nbsp;</span>
-                            </Typography>
-                            <Typography variant="body1" display="inline">
-                                {prediction}
-                            </Typography>
+                    <Grid item xs={12} sm={3} >
+                        <Paper  className={classes.title} elevation={0} >
+                            <ThemeProvider theme={theme1}>
+                                <Typography variant="caption" display="inline">
+                                    Sentiment: <span>&nbsp;</span>
+                                </Typography>
+                                <Typography  variant="body1" display="inline">
+                                    {prediction}
+                                </Typography>
+                            </ThemeProvider>
+
                         </Paper>
                     </Grid>
                 </Grid>
